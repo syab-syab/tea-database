@@ -1,0 +1,30 @@
+※react-router-domはバージョンを最新にした方が良いかも
+
+※一部のコンポーネント名を分かりやすく変える
+  決めてるのはuseFetchTeas.jsをuseFetch.jsやuseFetchData.jsなどに改名
+  (Main.jsをHome.jsに変えた方が良いかも)
+
+※muiはすべてに適用せずに一部に用いるのが良いかもしれない
+  例えば
+    Header.jsにLink(タイトル)、App bar(全体)
+    TeaDetails.jsにDividerが使えそうな気がする
+    ロード時にSkeleton
+    全体的にButton、Material Iconsが使える気がする
+
+コンポーネントの役割
+
+index.js...App.jsを表示する
+
+    App.js...基本的な骨組み
+
+        Header.js...ヘッダー。タイトルにトップページへ戻るリンクを設定
+
+        Home.js...トップページ的なもの(元Main.js)
+
+            SelectTag.js...表示するお茶のジャンル(Tagプロパティ)の選択するコンポーネント
+
+            Lists.js...それぞれのお茶のジャンルのリスト。クリックすると個別ページへ移動する
+
+        TeaDetails.js...お茶の個別に詳細が記載してあるページ。
+
+        Footer.js...フッター
