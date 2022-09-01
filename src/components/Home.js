@@ -3,6 +3,7 @@ import useFetch from "../hooks/useFetch";
 import SelectTag from "./SelectTag";
 import Lists from "./Lists";
 
+// アクセスを少なくしたいからselectで選びなおす度にアクセスするのを止めたい
 
 const Home = () => {
   const [typeOfTea, setTypeOfTea] = useState('緑茶');
@@ -12,6 +13,9 @@ const Home = () => {
 
   // expressのurl
   const url = `http://localhost:8000/teas_tag/${typeOfTea}`;
+
+  // テストのurl
+  // const url = "http://localhost:8000";
 
   console.log(url);
 
@@ -36,6 +40,7 @@ const Home = () => {
       { error && <div>{ error.message }</div> }
       { isLoaded && <div>Loading...</div> }
       { teas && <Lists values={teas} />}
+      {/* { teas && <Lists values={teas.filter(element => element.tag === typeOfTea)} />} */}
     </>
   );
 }

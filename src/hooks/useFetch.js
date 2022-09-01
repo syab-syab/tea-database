@@ -33,8 +33,9 @@ const useFetch = (url) => {
       }, 1000);
 
     return () => abortCont.abort();
+    
   }, [url])
-
+  console.log("yes")
   return { data, isLoaded, error };
 }
  
