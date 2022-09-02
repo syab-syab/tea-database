@@ -1,9 +1,9 @@
 // teaのすべてのデータを羅列する
-// ファイル名は変えるかも(若干分かりづらいかも)
 import useFetch from "../hooks/useFetch";
 import Lists from "./Lists";
+import TeaType from "../data/tea-type.json";
 
-const Teas = () => {
+const AllTeas = () => {
   // 全データを取得
   const url = "http://localhost:8000";
 
@@ -11,20 +11,8 @@ const Teas = () => {
 
   console.log(teas);
 
-  const teaTags = [
-    {
-      "id": 1,
-      "name": "緑茶"
-    },
-    {
-      "id": 2,
-      "name": "紅茶"
-    },
-    {
-      "id": 3,
-      "name": "ハーブティー"
-    }
-  ];
+  // お茶の分類(別ファイルに切り出した)
+  const teaTags = TeaType["tea-type"];
   // teas.filter(element => element.tag === "紅茶")でタグごとに取り出せる
   
   return (
@@ -44,4 +32,4 @@ const Teas = () => {
   );
 }
  
-export default Teas;
+export default AllTeas;
