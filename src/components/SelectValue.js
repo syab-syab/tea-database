@@ -1,4 +1,4 @@
-const SelectTag = ({ type, method, values }) => {
+const SelectValue = ({ type, method, values }) => {
   // 必要はないけどこのコンポーネントを再利用できるようにするために
   // optionタグを渡された値によって自動生成できるようにする
 
@@ -11,7 +11,7 @@ const SelectTag = ({ type, method, values }) => {
         >
           {
             values.map(value => (
-              <option value={value.value}>{value.name}</option>
+              <option key={value.id} value={value.value}>{value.name}</option>
             ))
           }
         </select>
@@ -19,4 +19,4 @@ const SelectTag = ({ type, method, values }) => {
   );
 }
  
-export default SelectTag;
+export default SelectValue;

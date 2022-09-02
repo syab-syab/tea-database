@@ -1,6 +1,5 @@
 // teaのすべてのデータを羅列する
 // ファイル名は変えるかも(若干分かりづらいかも)
-import { useState } from "react";
 import useFetch from "../hooks/useFetch";
 import Lists from "./Lists";
 
@@ -12,33 +11,35 @@ const Teas = () => {
 
   console.log(teas);
 
-  // const test = [{id: 1, name: '抹茶', description: '緑茶1', tag: '緑茶'}
-  // ,{id: 2, name: '煎茶', description: '煎茶2', tag: '緑茶'}
-  // ,{id: 3, name: 'アールグレイ', description: '紅茶1', tag: '紅茶'}
-  // ,{id: 4, name: 'セイロン', description: '紅茶2', tag: '紅茶'}
-  // ,{id: 5, name: 'ローズヒップ', description: 'ハーブティー1', tag: 'ハーブティー'}
-  // ,{id: 6, name: 'カモミール', description: 'ハーブティー2', tag: 'ハーブティー'}];
-  // console.log(test.filter(element => element.tag === "紅茶"))
-
-  const teaTags = ["緑茶", "紅茶", "ハーブティー"];
-  // teas.filter(element => element.tag === "紅茶")でタグごとに取り出せるから、
-  // for文で何とかタグごとに分けて描画できないか試す
-
+  const teaTags = [
+    {
+      "id": 1,
+      "name": "緑茶"
+    },
+    {
+      "id": 2,
+      "name": "紅茶"
+    },
+    {
+      "id": 3,
+      "name": "ハーブティー"
+    }
+  ];
+  // teas.filter(element => element.tag === "紅茶")でタグごとに取り出せる
   
   return (
     <div>
       <h1>All Teas</h1>
       { error && <div>{ error.message }</div> }
       { isLoaded && <div>Loading...</div> }
-      {/* できればお茶のタグ別に羅列させたい */}
-      {/* { teas && <Lists values={teas} />} */}
-      <p>{ teaTags[0] }</p>
-      { teas && <Lists values={teas.filter(element => element.tag === teaTags[0])} /> }
-      <p>{ teaTags[1] }</p>
-      { teas && <Lists values={teas.filter(element => element.tag === teaTags[1])} /> }
-      <p>{ teaTags[2] }</p>
-      { teas && <Lists values={teas.filter(element => element.tag === teaTags[2])} /> }
-
+      { teas &&
+        teaTags.map(tag => (
+          <div key={tag.id}>
+            <p>{tag.name}</p>
+            <Lists values={teas.filter(element => element.tag === tag.name)} />
+          </div>
+        ))
+      }
     </div>
   );
 }

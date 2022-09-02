@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useFetch from "../hooks/useFetch";
-import SelectTag from "./SelectTag";
+// import SelectTag from "./SelectValue";
+import SelectValue from "./SelectValue";
 import Lists from "./Lists";
 
 // アクセスを少なくしたいからselectで選びなおす度にアクセスするのを止めたい
@@ -29,14 +30,14 @@ const Home = () => {
 
     // JSONから全部取ってきた方が再利用性も上がりそう
   const selectVal = [
-    {"value": "緑茶", "name": "緑茶"},
-    {"value": "紅茶", "name": "紅茶"},
-    {"value": "ハーブティー", "name": "ハーブティー"}
+    {"id": 1, "value": "緑茶", "name": "緑茶"},
+    {"id": 2, "value": "紅茶", "name": "紅茶"},
+    {"id": 3, "value": "ハーブティー", "name": "ハーブティー"}
   ];
 
   return (
     <>
-      <SelectTag type={typeOfTea} method={handleChange} values={selectVal} />
+      <SelectValue type={typeOfTea} method={handleChange} values={selectVal} />
       { error && <div>{ error.message }</div> }
       { isLoaded && <div>Loading...</div> }
       { teas && <Lists values={teas} />}
