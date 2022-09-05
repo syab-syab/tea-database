@@ -1,0 +1,9 @@
+{
+  "caffeine": [
+    { "id": 1, "value": "多め", "name": "多め" },
+    { "id": 2, "value": "普通", "name": "普通" },
+    { "id": 3, "value": "少なめ", "name": "少なめ" },
+    { "id": 4, "value": "無し", "name": "無し" },
+    { "id": 5, "value": "不明", "name": "不明" }
+  ]
+}

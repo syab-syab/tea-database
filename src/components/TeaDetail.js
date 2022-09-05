@@ -1,6 +1,9 @@
 import { useParams } from "react-router";
 import useFetch from "../hooks/useFetch";
 
+//　茶の分類によって背景のデザイン(背景色か画像)を変更する
+// 日本茶なら緑、紅茶なら赤茶色...みたいに
+
 const TeaDetail = () => {
   const { id } = useParams();
 

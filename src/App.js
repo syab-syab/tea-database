@@ -1,6 +1,7 @@
 import './App.css';
 import Home from './components/Home';
 import AllTeas from './components/AllTeas';
+import Caffeine from './components/Caffeine';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import TeaDetail from './components/TeaDetail';
@@ -14,6 +15,7 @@ function App() {
       <Routes path='/'>
         <Route path='/' element={<Home />} />
         <Route path='/teas' element={<AllTeas />} />
+        <Route path='/caffeine' element={<Caffeine />} />
         {/* TeaDetailのパスは /teas/detail とか /teas/:id とかでもいいかも */}
         {/* /tea のパスはfetchしてきたデータを丸ごと羅列してリスト表示でクリックしたらdetailに飛ぶとかもあり←その際はOutletを使わざるを得ない */}
         <Route path='/teas/:id' element={<TeaDetail />} />
