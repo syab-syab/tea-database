@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+/* カフェイン量のスタイル */
+
+/* 多め */
+.many {
+  background-color: red;
+  color: white;
+}
+
+/* 普通 */
+.normal {
+  background-color: yellow;
+  color: white;
+}
+
+/* 少なめ */
+.few {
+  background-color: green;
+  color: white;
+}
+
+/* 無し */
+.none {
+  background-color: blue;
+  color: white;
+}
+
+/* 不明 */
+.unknown {
+  background-color: gray;
+  color: white;
+}

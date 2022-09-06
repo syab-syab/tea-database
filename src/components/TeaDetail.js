@@ -17,6 +17,22 @@ const TeaDetail = () => {
 
   console.log(tea);
 
+  const colorChange = (value) => {
+    if (value === "多め") {
+      return "many"
+    } else if (value === "普通") {
+      return "normal"
+    } else if (value === "少なめ") {
+      return "few"
+    } else if (value === "無し") {
+      return "none"
+    } else {
+      return "unknown"
+    }
+  };
+
+  // カフェイン量を多さで色分けする
+  // 多め→赤、普通→黄色、少なめ→緑、無し→青、不明→灰色
   return (
     <>
       { error && <div>{ error.message }</div> }
@@ -31,6 +47,9 @@ const TeaDetail = () => {
           </p>
           <p>
             { tea.description }
+          </p>
+          <p>
+            <span>カフェイン量:</span> <span className={colorChange(tea.caffeine)}>{tea.caffeine}</span>
           </p>
         </article>
       }
