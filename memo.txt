@@ -16,15 +16,46 @@
 index.js...App.jsを表示する
 
     App.js...基本的な骨組み
+      ┃(クラス名と役割)
+      ┣ App ... コンポーネントの描画
+      ┃
+      ┗ main ... Bootstarpで言うcontainer的なもの。
+        header以下、footer以上のすべてのコンポーネントを包む。
 
         Header.js...ヘッダー。タイトルにトップページへ戻るリンクを設定
+          ┃
+          ┣ header ... スタイルを適用させる際のheaderタグのクラス。
+          ┃
+          ┣ title ... サイトのタイトル。
+          ┃
+          ┗ sub-title ... サブタイトルのスタイル。
 
         Home.js...トップページ的なもの(元Main.js)
 
-            SelectTag.js...表示するお茶のジャンル(Tagプロパティ)の選択するコンポーネント
+            SelectValue.js...表示するお茶のジャンル(Tagプロパティ)とカフェイン量を選択するコンポーネント
+              ┃
+              ┣ select-value ... セレクトタグに付けたクラス名。
+              ┃
+              ┗ (後でselectの上にあるlabelとそれらを包むdivにもクラス必要かも)
 
             Lists.js...それぞれのお茶のジャンルのリスト。クリックすると個別ページへ移動する
+              ┃
+              ┗ (クラスは未定義だけど、見栄えを良くするために後でやる)
+          
+        AllTeas.js ... Home.jsと違ってセレクトタグを使わずに一度にすべてのお茶を列挙する。
+
+              List.js(AllTeas版)
+
+        Caffeine.js ... Home.jsのカフェインバージョン。カフェイン量でお茶を選択する
+              
+              SelectValue.js(Caffeine版)
+              
+              List.js(Caffeine版)
 
         TeaDetails.js...お茶の個別に詳細が記載してあるページ。
+          ┃
+          ┗ (見栄えが良くないので後ほどクラス定義してスタイルを整える)
+
+        NotFound.js ... いわゆる404ページ。 
 
         Footer.js...フッター

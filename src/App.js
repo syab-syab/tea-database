@@ -12,15 +12,17 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Routes path='/'>
-        <Route path='/' element={<Home />} />
-        <Route path='/teas' element={<AllTeas />} />
-        <Route path='/caffeine' element={<Caffeine />} />
-        {/* TeaDetailのパスは /teas/detail とか /teas/:id とかでもいいかも */}
-        {/* /tea のパスはfetchしてきたデータを丸ごと羅列してリスト表示でクリックしたらdetailに飛ぶとかもあり←その際はOutletを使わざるを得ない */}
-        <Route path='/teas/:id' element={<TeaDetail />} />
-        <Route path='*' element={<NotFound />} />
-      </Routes>
+      <main className='main'>
+        <Routes path='/'>
+          <Route path='/' element={<Home />} />
+          <Route path='/teas' element={<AllTeas />} />
+          <Route path='/caffeine' element={<Caffeine />} />
+          {/* TeaDetailのパスは /teas/detail とか /teas/:id とかでもいいかも */}
+          {/* /tea のパスはfetchしてきたデータを丸ごと羅列してリスト表示でクリックしたらdetailに飛ぶとかもあり←その際はOutletを使わざるを得ない */}
+          <Route path='/teas/:id' element={<TeaDetail />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </main>
       <Footer />
     </div>
   );

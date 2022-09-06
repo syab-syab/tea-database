@@ -1,8 +1,8 @@
 const Footer = () => {
   return (
-    <>
-      <h1>Footer</h1>
-    </>
+    <footer className="footer">
+      <span className="copy">©Tea's Database</span>
+    </footer>
   );
 }
  

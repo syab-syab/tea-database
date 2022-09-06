@@ -1,13 +1,14 @@
-const SelectValue = ({ type, method, values }) => {
+const SelectValue = ({ label, type, method, values }) => {
   // 必要はないけどこのコンポーネントを再利用できるようにするために
   // optionタグを渡された値によって自動生成できるようにする
 
   return (
-    <>
-      <label>お茶のタイプ</label>
+    <div>
+      <label>{label}</label>
       <select
           value={type}
           onChange={method}
+          className="select-value"
         >
           {
             values.map(value => (
@@ -15,7 +16,7 @@ const SelectValue = ({ type, method, values }) => {
             ))
           }
         </select>
-    </>
+    </div>
   );
 }
  

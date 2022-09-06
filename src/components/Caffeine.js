@@ -28,7 +28,7 @@ const Caffeine = () => {
 
   return (
     <>
-      <SelectValue type={typeOfCaffeine} method={handleChange} values={selectVal} />
+      <SelectValue label="カフェイン量" type={typeOfCaffeine} method={handleChange} values={selectVal} />
       { error && <div>{ error.message }</div> }
       { isLoaded && <div>Loading...</div> }
       { teas && <Lists values={teas.filter(element => element.caffeine === typeOfCaffeine)} />}

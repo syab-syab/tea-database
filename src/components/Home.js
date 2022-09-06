@@ -33,7 +33,7 @@ const Home = () => {
 
   return (
     <>
-      <SelectValue type={typeOfTea} method={handleChange} values={selectVal} />
+      <SelectValue label="お茶のタイプ" type={typeOfTea} method={handleChange} values={selectVal} />
       { error && <div>{ error.message }</div> }
       { isLoaded && <div>Loading...</div> }
       { teas && <Lists values={teas.filter(element => element.tag === typeOfTea)} />}
