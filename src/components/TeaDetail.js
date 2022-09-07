@@ -11,7 +11,10 @@ const TeaDetail = () => {
   // ので、値を表示するのが面倒になるから
   // ↓のurlのようにteas/idとすれば配列にならず単体のオブジェクト
   // で持ってきてくれる
-  const url = `http://localhost:8000/teas/${id}`;
+  // const url = `http://localhost:8000/teas/${id}`;
+
+  // 本番用url
+  const url = `https://tea-database-api.onrender.com/teas/${id}`
 
   const { data: tea, isLoaded, error } = useFetch(url);
 

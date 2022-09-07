@@ -7,14 +7,12 @@ import TeaType from "../data/tea-type.json";
 const Home = () => {
   const [typeOfTea, setTypeOfTea] = useState('日本茶');
 
-  // json-serverのurl
-  // const url = `http://localhost:8000/teas?tag=${typeOfTea}`;
-
-  // expressのurl
-  // const url = `http://localhost:8000/teas_tag/${typeOfTea}`;
 
   // テストのurl
-  const url = "http://localhost:8000";
+  // const url = "http://localhost:8000/teas";
+
+  // 本番url
+  const url = "https://tea-database-api.onrender.com/teas";
 
   console.log(url);
 

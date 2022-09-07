@@ -8,6 +8,7 @@ import TeaDetail from './components/TeaDetail';
 import NotFound from './components/NotFound';
 import { Routes, Route  } from 'react-router-dom';
 
+// Aboutページとか作った方が良いかも
 function App() {
   return (
     <div className="App">
