@@ -9,10 +9,10 @@ const Caffeine = () => {
 
 
   // テストのurl
-  // const url = "http://localhost:8000/teas";
+  const url = "http://localhost:8000/teas";
 
   // 本番url
-  const url = "https://tea-database-api.onrender.com/teas";
+  // const url = "https://tea-database-api.onrender.com/teas";
 
   console.log(url);
 

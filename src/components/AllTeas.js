@@ -5,10 +5,10 @@ import TeaType from "../data/tea-type.json";
 
 const AllTeas = () => {
   // 全データを取得
-  // const url = "http://localhost:8000/teas";
+  const url = "http://localhost:8000/teas";
 
-  // 修正後url
-  const url = "https://tea-database-api.onrender.com/teas";
+  // 本番url
+  // const url = "https://tea-database-api.onrender.com/teas";
 
   const { data: teas, isLoaded, error } = useFetch(url);
 

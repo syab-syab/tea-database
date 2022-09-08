@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Lists = ({values}) => {
   return (
     <>
-      <nav>
+      <nav className="content-list">
         {values.map(tea => (
           // 各ページの詳細が表示されないので修正する
           <div key={tea.id}>
