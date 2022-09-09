@@ -4,24 +4,20 @@ import SelectValue from "./SelectValue";
 import Lists from "./Lists";
 import TeaType from "../data/tea-type.json";
 import LoadingImg from "../images/loading.gif";
+import TeaUrl from "../data/url.json";
 
 const Home = () => {
   const [typeOfTea, setTypeOfTea] = useState('日本茶');
 
 
   // テストのurl
-  const url = "http://localhost:8000/teas";
+  // const url = "http://localhost:8000/teas";
 
   // 本番url
-  // const url = "https://tea-database-api.onrender.com/teas";
-
-  console.log(url);
+  const url = TeaUrl["url"][0].url;
 
   const { data: teas, isLoaded, error } = useFetch(url);
   
-  
-  console.log(teas);
-
 
   const handleChange = (e) => {
     setTypeOfTea(e.target.value);

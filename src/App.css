@@ -11,15 +11,9 @@
 
 
 body {
-  /* color: #bfb8b8; */
-  /* background: url(../images/background.jpg) no-repeat; */
-  background: rgb(163, 249, 192);
-  /* background-size: cover; */
-  /* background-color:rgb(0 68 29 / 80%); */
-  /* background-blend-mode: multiply; */
+  background: black;
   text-align: center;
   font-size: 10rem;
-  /* font-family: "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif; */
 }
 
 /* 基幹部分 end */
@@ -28,21 +22,25 @@ body {
 /* header */
 
 .header {
+  background: rgb(163, 249, 192);
   padding: 5rem 0 0 0;
-  /* 仮組み */
-  border: 1px solid black;
 }
 
+.title-cover {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
 
 .title {
   letter-spacing: 0.2rem;
-  font-size: 180%;
+  font-size: 250%;
   margin: 0;
   font-weight: lighter;
 }
 
 .sub-title {
-  font-size: 60%;
+  font-size: 100%;
   font-weight: lighter;
 }
 
@@ -112,7 +110,6 @@ body {
 
 .footer {
   background: black;
-  /* padding-top: 3rem; */
   color: white;
 }
 

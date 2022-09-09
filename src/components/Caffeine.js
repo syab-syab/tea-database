@@ -4,30 +4,25 @@ import SelectValue from "./SelectValue";
 import Lists from "./Lists";
 import TeasCaffeine from "../data/caffeine-type.json";
 import LoadingImg from "../images/loading.gif";
+import TeaUrl from "../data/url.json";
 
 const Caffeine = () => {
   const [typeOfCaffeine, setTypeOfCaffeine] = useState('普通');
 
 
   // テストのurl
-  const url = "http://localhost:8000/teas";
+  // const url = "http://localhost:8000/teas";
 
   // 本番url
-  // const url = "https://tea-database-api.onrender.com/teas";
-
-  console.log(url);
+  const url = TeaUrl["url"][0].url;
 
   const { data: teas, isLoaded, error } = useFetch(url);
   
-  
-  console.log(teas);
-
 
   const handleChange = (e) => {
     setTypeOfCaffeine(e.target.value);
   }
 
-  // お茶の分類(別ファイルに切り出した)
   const selectVal = TeasCaffeine["caffeine"];
 
   return (

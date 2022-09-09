@@ -1,10 +1,7 @@
-const SelectValue = ({ label, type, method, values }) => {
-  // 必要はないけどこのコンポーネントを再利用できるようにするために
-  // optionタグを渡された値によって自動生成できるようにする
+const SelectValue = ({ type, method, values }) => {
 
   return (
     <div>
-      {/* <label>{label}</label> */}
       <select
           value={type}
           onChange={method}
