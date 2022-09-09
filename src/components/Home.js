@@ -3,6 +3,7 @@ import useFetch from "../hooks/useFetch";
 import SelectValue from "./SelectValue";
 import Lists from "./Lists";
 import TeaType from "../data/tea-type.json";
+import LoadingImg from "../images/loading.gif";
 
 const Home = () => {
   const [typeOfTea, setTypeOfTea] = useState('日本茶');
@@ -31,9 +32,10 @@ const Home = () => {
 
   return (
     <>
-      <SelectValue label="お茶のタイプ" type={typeOfTea} method={handleChange} values={selectVal} />
+      <h1 className="heading-content-title">お茶のタイプ</h1>
+      <SelectValue type={typeOfTea} method={handleChange} values={selectVal} />
       { error && <div>{ error.message }</div> }
-      { isLoaded && <div>Loading...</div> }
+      { isLoaded && <div><img src={LoadingImg} alt="Loading" /></div> }
       { teas && <Lists values={teas.filter(element => element.tag === typeOfTea)} />}
     </>
   );

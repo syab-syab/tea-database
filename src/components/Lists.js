@@ -9,7 +9,7 @@ const Lists = ({values}) => {
         {values.map(tea => (
           // 各ページの詳細が表示されないので修正する
           <div key={tea.id}>
-            <Link to={`/teas/${tea.id}`}>
+            <Link to={`/teas/${tea.id}`} style={{textDecoration: "none", color: "black"}}>
               {tea.name}
             </Link>
           </div>

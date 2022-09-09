@@ -33,6 +33,8 @@ index.js...App.jsを表示する
           ┗ header-menu ... 各ページへのリンク
 
         Home.js...トップページ的なもの(元Main.js)
+          ┃
+          ┗ 
 
             SelectValue.js...表示するお茶のジャンル(Tagプロパティ)とカフェイン量を選択するコンポーネント
               ┃
@@ -45,10 +47,14 @@ index.js...App.jsを表示する
               ┗ content-list ... 生成されるlist(実際はdiv)要素のスタイル
 
         AllTeas.js ... Home.jsと違ってセレクトタグを使わずに一度にすべてのお茶を列挙する。
+          ┃
+          ┗ 
 
               List.js(AllTeas版)
 
         Caffeine.js ... Home.jsのカフェインバージョン。カフェイン量でお茶を選択する
+          ┃
+          ┗ 
               
               SelectValue.js(Caffeine版)
               
@@ -56,8 +62,22 @@ index.js...App.jsを表示する
 
         TeaDetails.js...お茶の個別に詳細が記載してあるページ。
           ┃
-          ┗ (見栄えが良くないので後ほどクラス定義してスタイルを整える)
+          ┗ 
+
+        About.js ... サイトについての概要。
+            ┃
+            ┗ 
 
         NotFound.js ... いわゆる404ページ。 
 
         Footer.js...フッター
+
+    全コンポーネント共通
+      ┃
+      ┣ heading-content-title ... 各ページのコンテントのタイトル(h1タグに付ける)
+      ┃
+      ┣ green-tea, black-tea, herb-tea, other-tea ... 各お茶の文字色
+      ┃
+      ┣ many, normal, few, none, unknown ... カフェイン量の色
+      ┃
+      ┣ article ... 各ページにarticleタグがあったら付ける

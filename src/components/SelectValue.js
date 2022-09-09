@@ -4,7 +4,7 @@ const SelectValue = ({ label, type, method, values }) => {
 
   return (
     <div>
-      <label>{label}</label>
+      {/* <label>{label}</label> */}
       <select
           value={type}
           onChange={method}
@@ -12,7 +12,7 @@ const SelectValue = ({ label, type, method, values }) => {
         >
           {
             values.map(value => (
-              <option key={value.id} value={value.value}>{value.name}</option>
+              <option key={value.id} value={value.value}>{value.name} ▼</option>
             ))
           }
         </select>

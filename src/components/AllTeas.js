@@ -2,6 +2,8 @@
 import useFetch from "../hooks/useFetch";
 import Lists from "./Lists";
 import TeaType from "../data/tea-type.json";
+import colorChangeTag from "../functions/colorChangeTag";
+import LoadingImg from "../images/loading.gif";
 
 const AllTeas = () => {
   // 全データを取得
@@ -19,19 +21,18 @@ const AllTeas = () => {
   // teas.filter(element => element.tag === "紅茶")でタグごとに取り出せる
   
   return (
-    <div>
-      <h1>All Teas</h1>
+    <>
       { error && <div>{ error.message }</div> }
-      { isLoaded && <div>Loading...</div> }
+      { isLoaded && <div><img src={LoadingImg} alt="Loading" /></div> }
       { teas &&
         teaTags.map(tag => (
-          <div key={tag.id}>
-            <p>{tag.name}</p>
+          <div key={tag.id} style={{ marginBottom: '3.5rem'}}>
+            <h1 className={`${colorChangeTag(tag.name)} heading-content-title`} style={{ margin: 0}}>{tag.name}</h1>
             <Lists values={teas.filter(element => element.tag === tag.name)} />
           </div>
         ))
       }
-    </div>
+    </>
   );
 }
  

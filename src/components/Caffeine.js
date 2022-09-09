@@ -3,6 +3,7 @@ import useFetch from "../hooks/useFetch";
 import SelectValue from "./SelectValue";
 import Lists from "./Lists";
 import TeasCaffeine from "../data/caffeine-type.json";
+import LoadingImg from "../images/loading.gif";
 
 const Caffeine = () => {
   const [typeOfCaffeine, setTypeOfCaffeine] = useState('普通');
@@ -31,9 +32,10 @@ const Caffeine = () => {
 
   return (
     <>
-      <SelectValue label="カフェイン量" type={typeOfCaffeine} method={handleChange} values={selectVal} />
+      <h1 className="heading-content-title">カフェイン量</h1>
+      <SelectValue type={typeOfCaffeine} method={handleChange} values={selectVal} />
       { error && <div>{ error.message }</div> }
-      { isLoaded && <div>Loading...</div> }
+      { isLoaded && <div><img src={LoadingImg} alt="Loading" /></div>  }
       { teas && <Lists values={teas.filter(element => element.caffeine === typeOfCaffeine)} />}
     </>
   );

@@ -25,7 +25,6 @@ body {
 /* 基幹部分 end */
 
 
-
 /* header */
 
 .header {
@@ -91,15 +90,12 @@ body {
 .select-value {
   -webkit-appearance: none;
   appearance: none;
-  /* color: rgb(128, 128, 128); */
-  /* color: white; */
   color: black;
   width: auto;
   padding: 1rem;
   margin: 2rem auto;
-  border-radius: 1rem;
-  /* background-color: transparent; */
   outline: none;
+  font-size: 1.5rem;
 }
 
 /* Lists.js */
@@ -128,36 +124,65 @@ body {
 /* footer End */
 
 
+/* 全コンポーネント共通 */
+
+.heading-content-title {
+  font-size: 2rem;
+}
+
+.green-tea {
+  color: rgb(1, 98, 1);
+}
+
+.black-tea {
+  color: brown;
+}
+
+.herb-tea {
+  color: bisque;
+}
+
+.other-tea {
+  color: rgb(93, 93, 93);
+}
 
 
 /* カフェイン量のスタイル */
 
-/* 多め */
 .many {
   background-color: red;
-  color: white;
+  color: wheat;
 }
 
-/* 普通 */
 .normal {
   background-color: yellow;
-  color: white;
+  color: black;
 }
 
-/* 少なめ */
 .few {
   background-color: green;
   color: white;
 }
 
-/* 無し */
 .none {
   background-color: blue;
   color: white;
 }
 
-/* 不明 */
 .unknown {
   background-color: gray;
   color: white;
+}
+
+/* articleタグ */
+.article {
+  font-size: 3rem;
+  width: auto;
+  margin: 0 25% 0;
+}
+
+@media (max-width: 768px) {
+  .article {
+    margin: 0 10% 0; 
+  }
 }
