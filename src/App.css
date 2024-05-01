@@ -96,6 +96,7 @@ body {
   font-size: 1.5rem;
 }
 
+
 /* Lists.js */
 .content-list {
   font-size: 5rem;
@@ -169,6 +170,11 @@ body {
 .unknown {
   background-color: gray;
   color: white;
+}
+
+/* お茶の説明 */
+.tea-description {
+  text-align: left;
 }
 
 /* articleタグ */

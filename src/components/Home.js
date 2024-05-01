@@ -1,10 +1,12 @@
 import { useState } from "react";
-import useFetch from "../hooks/useFetch";
+// import useFetch from "../hooks/useFetch";
 import SelectValue from "./SelectValue";
 import Lists from "./Lists";
 import TeaType from "../data/tea-type.json";
-import LoadingImg from "../images/loading.gif";
-import TeaUrl from "../data/url.json";
+// import LoadingImg from "../images/loading.gif";
+// import TeaUrl from "../data/url.json";
+
+import TeasData from "../data/db.json"
 
 const Home = () => {
   const [typeOfTea, setTypeOfTea] = useState('日本茶');
@@ -14,10 +16,11 @@ const Home = () => {
   // const url = "http://localhost:8000/teas";
 
   // 本番url
-  const url = TeaUrl["url"][0].url;
+  // const url = TeaUrl["url"][0].url;
 
-  const { data: teas, isLoaded, error } = useFetch(url);
+  // const { data: teas, isLoaded, error } = useFetch(url);
   
+  const teas = TeasData["teas"]
 
   const handleChange = (e) => {
     setTypeOfTea(e.target.value);
@@ -30,8 +33,8 @@ const Home = () => {
     <>
       <h1 className="heading-content-title">お茶のタイプ</h1>
       <SelectValue type={typeOfTea} method={handleChange} values={selectVal} />
-      { error && <div>{ error.message }</div> }
-      { isLoaded && <div><img src={LoadingImg} alt="Loading" /></div> }
+      {/* { error && <div>{ error.message }</div> } */}
+      {/* { isLoaded && <div><img src={LoadingImg} alt="Loading" /></div> } */}
       { teas && <Lists values={teas.filter(element => element.tag === typeOfTea)} />}
     </>
   );
